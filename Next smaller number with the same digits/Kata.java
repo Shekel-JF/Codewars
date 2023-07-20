@@ -27,7 +27,6 @@ public class Kata
               char[] toSort = new char[length - i];
               for(int k = 0; k < length - i; k++)
               {
-
                   toSort[k] = digits[length - 1 - k];
               }
               Arrays.sort(toSort);
