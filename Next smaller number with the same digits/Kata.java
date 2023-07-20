@@ -1,21 +1,20 @@
 import java.util.*;
 public class Kata
 {
-    public static long nextBiggerNumber(long n)
-    {
+  public static long nextSmaller(long n)
+  {
       String numString = Long.toString(n);
       int length = numString.length();
       char[] digits = numString.toCharArray();
 
       for(int i = length - 1; i > 0; i--)
       {
-          if(digits[i - 1] < digits[i])
+          if(digits[i - 1] > digits[i])
           {
               int highestIndex = i;
               for(int j = i; j < length; j++)
               {
-
-                  if(digits[j] < digits[highestIndex] && digits[j] > digits[i-1])
+                  if(digits[j] > digits[highestIndex] && digits[j] < digits[i-1])
                   {
                       highestIndex = j;
                   }
@@ -30,6 +29,7 @@ public class Kata
                   toSort[k] = digits[length - 1 - k];
               }
               Arrays.sort(toSort);
+        
               String result = "";
               for(int l = 0; l < length - toSort.length; l++)
               {
@@ -39,16 +39,16 @@ public class Kata
                   }
                   result+=digits[l];
               }
-              for(int m = 0; m < toSort.length; m++)
+              for(int m = toSort.length - 1; m >= 0; m--)
               {
                   result+=toSort[m];
               }
-              if(Long.parseLong(result) > n)
+              if(Long.parseLong(result) < n)
               {
                   return Long.parseLong(result);
               }
           }   
       }
       return -1;
-    }
+  }
 }
