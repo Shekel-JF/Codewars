@@ -7,8 +7,8 @@ public class BattleField
         int cruiser = 2;
         int destroyer = 3;
         int submarine = 4;
-        
         List<String> ships = new ArrayList<>();
+        
         for(int i = 0; i < field.length; i++)
         {
             StringBuilder ship1 = new StringBuilder();
