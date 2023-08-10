@@ -20,6 +20,6 @@ class Solution
                 i--;
             }
         }  
-    		return result.toString();
+    	return result.toString();
     }
 }
