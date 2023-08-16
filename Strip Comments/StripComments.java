@@ -1,6 +1,6 @@
 public class StripComments
 {
-	  public static String stripComments(String text, String[] commentSymbols)
+	public static String stripComments(String text, String[] commentSymbols)
     {
         StringBuilder result = new StringBuilder();
         String[] chars = text.split("");
@@ -28,6 +28,6 @@ public class StripComments
                 }
             }
         }
-		    return result.toString().replaceAll("\\h+$", "");
-	  }
+		return result.toString().replaceAll("\\h+$", "");
+	}
 }
